@@ -1,223 +1,192 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Jhon Paolo Bared | Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jhon Paolo | Programmer Portfolio</title>
 
     <style>
         * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
             scroll-behavior: smooth;
         }
 
         body {
-            margin: 0;
             font-family: Arial, sans-serif;
-            background: #f8fbff;
-            color: #334155;
+            background: #f4f6f8;
+            color: #222;
+            line-height: 1.6;
         }
 
-        /* NAVIGATION */
+        /* Navigation */
         nav {
+            background: #111827;
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             position: sticky;
             top: 0;
-            z-index: 100;
-            background: white;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 3px 15px #94a3b833;
+            z-index: 1000;
         }
 
-        nav a {
-            color: #475569;
+        nav h2 {
+            color: white;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
             text-decoration: none;
-            margin: 0 14px;
-            font-weight: bold;
-            font-size: 17px;
         }
 
-        nav a:hover {
-            color: #6366f1;
+        nav ul li a:hover {
+            color: #38bdf8;
         }
 
-        /* HOME */
-        .home {
+        /* Home */
+        #home {
             min-height: 90vh;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
+            background: linear-gradient(135deg, #0f172a, #1e3a8a);
+            color: white;
             padding: 40px 20px;
-            background: linear-gradient(135deg, #dbeafe, #ede9fe);
         }
 
-        .profile {
-            width: 210px;
-            height: 210px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 6px solid white;
-            box-shadow: 0 10px 30px #6366f133;
+        .home-content h1 {
+            font-size: 50px;
+            margin-bottom: 10px;
         }
 
-        .home h1 {
-            font-size: 52px;
-            color: #334155;
-            margin: 20px 0 10px;
+        .home-content span {
+            color: #38bdf8;
         }
 
-        .home h2 {
-            font-size: 25px;
-            color: #6366f1;
+        .home-content p {
+            font-size: 20px;
+            margin-bottom: 25px;
         }
 
         .btn {
             display: inline-block;
-            padding: 14px 28px;
-            margin: 10px;
-            border-radius: 30px;
-            background: #6366f1;
-            color: white;
+            background: #38bdf8;
+            color: #111827;
+            padding: 12px 25px;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 17px;
-            transition: .3s;
-            box-shadow: 0 5px 15px #6366f144;
         }
 
         .btn:hover {
-            transform: translateY(-5px);
-            background: #4f46e5;
+            background: white;
         }
 
-        /* SECTIONS */
+        /* Sections */
         section {
-            max-width: 1000px;
-            margin: auto;
-            padding: 90px 30px;
+            padding: 70px 10%;
         }
 
         section h2 {
             text-align: center;
-            font-size: 34px;
-            color: #6366f1;
-            margin-bottom: 40px;
+            margin-bottom: 35px;
+            font-size: 32px;
+            color: #1e3a8a;
         }
 
-        /* CARDS */
-        .card {
-            background: white;
-            padding: 35px;
-            border-radius: 20px;
-            margin-bottom: 25px;
-            box-shadow: 0 8px 25px #94a3b826;
+        /* About */
+        .about {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
             font-size: 18px;
-            border: 1px solid #e0e7ff;
-            transition: .3s;
         }
 
-        .card:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 12px 30px #6366f126;
-        }
-
-        /* SKILLS */
-        .skills {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
+        /* Skills */
+        .skills-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
         .skill {
             background: white;
-            padding: 28px;
-            border-radius: 20px;
-            box-shadow: 0 8px 20px #94a3b826;
-            font-size: 18px;
-            border: 1px solid #e0e7ff;
-            transition: .3s;
-        }
-
-        .skill:hover {
-            transform: scale(1.03);
-            border-color: #a5b4fc;
-        }
-
-        .skill span {
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
             font-weight: bold;
-            font-size: 20px;
         }
 
-        .bar {
-            height: 10px;
-            background: #e2e8f0;
-            border-radius: 10px;
-            margin-top: 15px;
+        /* Projects */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
         }
 
-        .bar div {
-            height: 100%;
-            background: linear-gradient(90deg, #60a5fa, #818cf8);
-            border-radius: 10px;
-        }
-
-        /* PROJECT */
         .project {
-            border-left: 7px solid #818cf8;
-            background: #ffffff;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
 
         .project h3 {
-            font-size: 25px;
-            color: #4f46e5;
+            color: #1e3a8a;
+            margin-bottom: 10px;
         }
 
-        .project li {
-            margin: 12px 0;
+        .project p {
+            margin-bottom: 15px;
         }
 
-        /* CONTACT */
+        .tech {
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Contact */
         .contact {
             text-align: center;
-            background: linear-gradient(135deg, #eff6ff, #f5f3ff);
         }
 
-        .contact a {
-            color: #6366f1;
-            font-weight: bold;
-            font-size: 19px;
+        .contact p {
+            margin: 10px;
         }
 
-        /* FOOTER */
+        /* Footer */
         footer {
-            background: #e0e7ff;
-            color: #475569;
+            background: #111827;
+            color: white;
             text-align: center;
-            padding: 30px;
+            padding: 20px;
         }
 
-        /* MOBILE */
-        @media(max-width: 600px) {
-
-            .home h1 {
-                font-size: 36px;
+        /* Mobile */
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                gap: 10px;
             }
 
-            .home h2 {
-                font-size: 20px;
+            nav ul {
+                gap: 12px;
+                font-size: 14px;
             }
 
-            .profile {
-                width: 170px;
-                height: 170px;
-            }
-
-            .skills {
-                grid-template-columns: 1fr;
-            }
-
-            nav a {
-                font-size: 13px;
-                margin: 5px;
+            .home-content h1 {
+                font-size: 38px;
             }
         }
     </style>
@@ -225,7 +194,126 @@
 
 <body>
 
-<!-- NAVIGATION -->
+    <!-- Navigation -->
+    <nav>
+        <h2>Jhon Paolo</h2>
 
-<nav>
-    <a href="#home">Home
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home -->
+    <section id="home">
+        <div class="home-content">
+            <h1>Hello, I'm <span>Jhon Paolo</span></h1>
+
+            <p>Student Programmer | Web Developer | IT Student</p>
+
+            <a href="#projects" class="btn">View My Projects</a>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <h2>About Me</h2>
+
+        <div class="about">
+            <p>
+                I am an Information Technology student and aspiring programmer.
+                I am interested in web development, software development,
+                networking, and cybersecurity. I enjoy learning new technologies
+                and creating useful applications.
+            </p>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+        <h2>My Skills</h2>
+
+        <div class="skills-container">
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">Java</div>
+            <div class="skill">Python</div>
+            <div class="skill">MySQL</div>
+            <div class="skill">Git & GitHub</div>
+            <div class="skill">Cisco Networking</div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <h2>My Projects</h2>
+
+        <div class="projects-container">
+
+            <div class="project">
+                <h3>Student Attendance System</h3>
+
+                <p>
+                    A system designed to record and manage student attendance
+                    efficiently.
+                </p>
+
+                <p class="tech">
+                    <strong>Technology:</strong>
+                    HTML, CSS, JavaScript, MySQL
+                </p>
+            </div>
+
+            <div class="project">
+                <h3>Booking System</h3>
+
+                <p>
+                    A web-based booking application where users can view
+                    available services and make reservations.
+                </p>
+
+                <p class="tech">
+                    <strong>Technology:</strong>
+                    HTML, CSS, JavaScript, PHP
+                </p>
+            </div>
+
+            <div class="project">
+                <h3>Portfolio Website</h3>
+
+                <p>
+                    A personal portfolio website that presents my profile,
+                    programming skills, and projects.
+                </p>
+
+                <p class="tech">
+                    <strong>Technology:</strong>
+                    HTML, CSS, JavaScript
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+
+        <div class="contact">
+            <p>📧 Email: your-email@example.com</p>
+            <p>🌐 GitHub: github.com/yourusername</p>
+            <p>📍 Philippines</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Jhon Paolo. All Rights Reserved.</p>
+    </footer>
+
+</body>
+        </html>
